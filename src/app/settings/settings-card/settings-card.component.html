@@ -1,0 +1,7 @@
+<StackLayout class="p-t-25">
+    <Label [text]="settingsHeading" class="p-l-15 p-t-10 h2"></Label>
+    <StackLayout class="hr-light"></StackLayout>
+    <ng-container *ngFor="let item of settingsItems;">
+        <SettingsCardItem [cardIcon]="item.icon" [cardText]="item.text" [hasSwitch]="item.hasSwitch"></SettingsCardItem>
+    </ng-container>
+</StackLayout>

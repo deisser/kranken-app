@@ -1,0 +1,8 @@
+<GridLayout columns="45,*,75" class="p-l-15 p-y-15 settings-items-background">
+    <Label col="0" class="fa" [text]="cardIcon"></Label>
+    <Label col="1" [text]="cardText" textWrap="true"></Label>
+    <Label col="2" class="fa p-r-15" text="&#xf054;" visibility="{{ !hasSwitch ? 'visible' : 'collapsed' }}"
+        horizontalAlignment="right"></Label>
+    <Switch col="2" class="p-r-10" checked="true" visibility="{{ hasSwitch ? 'visible' : 'collapsed' }}"></Switch>
+</GridLayout>
+<StackLayout class="hr-light"></StackLayout>

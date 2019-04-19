@@ -1,0 +1,12 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Einstellungen"></Label>
+</ActionBar>
+
+<ScrollView class="settings-bg">
+    <StackLayout class="page page-content settings-bg">
+        <SettingsCard [settingsItems]="systemSettingsItems" [settingsHeading]="systemSettingsHeading">
+        </SettingsCard>
+        <SettingsCard [settingsItems]="additionalSettingsItems" [settingsHeading]="additionalSettingsHeading">
+        </SettingsCard>
+    </StackLayout>
+</ScrollView>

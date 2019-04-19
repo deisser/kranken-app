@@ -36,6 +36,9 @@ $page-icon-color: #D7D7D7 !default;
 // Sizes
 $page-content-placeholder-font-size: 20;
 
+// WuW
+$ww-orange: #F73F15 !default;
+
 /**
  * Theme variables overrides
 **/
@@ -45,7 +48,7 @@ $background: #fff;
 $primary: lighten(#000, 13%);
 $secondary: lighten(#000, 46%);
 $disabled: lighten(#000, 62%);
-$accent: $accent-dark;
+$accent: $ww-orange;
 $error: $error-light;
 
 // SideDrawer
