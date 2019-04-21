@@ -47,5 +47,9 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>use camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>save pictures</string>
 </dict>
 </plist>

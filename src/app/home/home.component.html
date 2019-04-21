@@ -7,13 +7,17 @@
         <StackLayout>
             <ng-container *ngFor="let item of items">
                 <GridLayout columns="120,*" backgroundColor="lightgray" class="p-t-8" #view>
-                    <Image
+                    <Image visibility="{{ !item.img ? 'visible' : 'collapsed' }}"
                         src="https://data2.unhcr.org/images/documents/big_e95f5a40921c34fe8963fd4c68149b0fed61fb18.jpg"
-                        stretch="aspectFill" col="0" borderColor="lightgray" borderWidth="1 0 1 0">
+                        stretch="fill" col="0" borderColor="lightgray" borderWidth="1 0 1 0">
+                    </Image>
+                    <Image visibility="{{ item.img ? 'visible' : 'collapsed' }}"
+                        [src]="item.img"
+                        stretch="fill" col="0" borderColor="lightgray" borderWidth="1 0 1 0">
                     </Image>
                     <FlexboxLayout flexDirection="column" justifyContent="space-between" col="1" backgroundColor="white"
                         borderColor="lightgray" borderWidth="1 0 1 1">
-                        <Label text="{{item.timestamp | date: 'dd.MM.yyyy hh:mm'}} Uhr" class="p-10"></Label>
+                        <Label text="{{item.timestamp | date: 'dd.MM.yyyy HH:mm'}} Uhr" class="p-10"></Label>
                         <FlexboxLayout flexDirection="column" class="p-10">
                             <Label [text]="mapDocumentStatus(item.status).text" textWrap="true"></Label>
                             <GridLayout columns="*,*" class="progressbar">

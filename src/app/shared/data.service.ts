@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { formatDate } from '@angular/common';
+import { ImageAsset } from 'tns-core-modules/image-asset/image-asset';
 
 export interface IDataItem {
 	id: number;
 	timestamp: Date;
 	status: number;
+	img?: ImageAsset;
 }
 
 @Injectable({

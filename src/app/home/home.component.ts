@@ -5,6 +5,7 @@ import { View } from 'tns-core-modules/ui/page/page';
 import { LayoutBase } from 'tns-core-modules/ui/layouts/layout-base';
 import { Label } from 'tns-core-modules/ui/label';
 import { AnimationCurve } from 'tns-core-modules/ui/enums';
+import { takePicture, requestPermissions } from 'nativescript-camera';
 
 @Component({
 	selector: 'Home',
@@ -21,14 +22,35 @@ export class HomeComponent implements OnInit {
 	}
 
 	createNewDocument() {
-		console.log('create new document');
+		requestPermissions()
+			.then(() => {
+				var options = {
+					width: 240,
+					height: 320,
+					keepAspectRatio: false,
+					saveToGallery: false
+				};
+				takePicture(options)
+					.then((imageAsset: any) => {
+						this.items.unshift({
+							id: Math.floor(Math.random() * 1000) + 20,
+							timestamp: new Date(),
+							status: 1,
+							img: imageAsset
+						});
+					})
+					.catch((err) => {
+						console.log('Error -> ' + err.message);
+					});
+			})
+			.catch(() => alert('no permissions'));
 	}
 
 	deleteDocument(item: IDataItem, view: View) {
 		view
 			.animate({
 				translate: { x: -500, y: 0 },
-				duration: 600,
+				duration: 500,
 				curve: AnimationCurve.easeOut
 			})
 			.then(() => {
