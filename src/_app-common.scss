@@ -35,3 +35,32 @@
 ActionBar .action-bar-title {
     horizontal-align: center;
 }
+
+// FAB Button
+.fab-button {
+    height: 60;
+    width: 60; /// this is required on iOS - Android does not require width so you might need to adjust styles
+    margin: 15;
+    background-color: $ww-orange;
+    horizontal-align: right;
+    vertical-align: bottom;
+}
+
+// Progressbar
+.progressbar {
+    height: 10;
+    margin-top: 10;
+    border-radius: 10;
+    border-color: $ww-orange;
+    border-width: 1 1 1 1;
+    background: rgb(255, 255, 255);
+}
+
+.progressbar-section {
+    border-left-width: 2;
+    border-color: gray;
+}
+
+.progressbar-value {
+    background: $ww-orange;
+}
